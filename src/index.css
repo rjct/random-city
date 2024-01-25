@@ -1,0 +1,97 @@
+:root {
+  --padding: 1rem;
+  --text-color: #212529;
+  --border-radius: 0.275rem;
+  --border-color: #dee2e6;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  color: var(--text-color);
+}
+.App {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings {
+  position: absolute;
+  top: var(--padding);
+  right: var(--padding);
+  z-index: 2;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  border: solid 1px rgba(0,0,0,0.25);
+  box-shadow: 0 5px 5px -5px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.container {
+  z-index: 1;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-top: solid 1px var(--border-color);
+}
+
+.board-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  overscroll-behavior: none;
+  grid-area: board;
+}
+
+.board {
+
+}
+
+.cell {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.cell > div {
+  position: absolute;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.mini-map {
+  border: solid 1px rgba(0,0,0,0.25);
+  box-shadow: 10px 10px 20px -5px rgba(0,0,0,0.5);
+  transform: rotateX(60deg) rotateZ(45deg);
+  /*background-color: #fff;*/
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 70%;
+  margin: -20px 0;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s linear;
+}
+.mini-map[data-busy] {
+  backdrop-filter: blur(5px);
+  opacity: 0.5;
+}

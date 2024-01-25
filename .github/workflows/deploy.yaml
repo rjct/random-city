@@ -1,0 +1,37 @@
+on:
+  push:
+    branches:
+      - "main"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout if required
+        uses: actions/checkout@v3
+
+      - name: 'Build'
+        shell: bash
+        env:
+          BUILD_PATH: "dist"
+        run: |
+          echo "::group::Build" 
+          npm ci
+          npm run build
+          echo "::endgroup::"
+
+      - name: 'upload'
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: "dist"
+
+      - id: deploy
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v3
+        with:
+          token: ${{ github.token }}
