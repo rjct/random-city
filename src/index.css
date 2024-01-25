@@ -83,9 +83,9 @@ body {
   /*background-color: #fff;*/
   background-repeat: no-repeat;
   background-size: contain;
-  width: 70%;
+  width: 150px;
+  height: 150px;
   margin: -20px 0;
-  aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
