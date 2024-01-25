@@ -21,7 +21,11 @@ export function RandomButton(props: { onClick: (args: NewCityArgs) => void }) {
   };
 
   return (
-    <Button sx={{ mt: 2 }} loading={busy} onClick={handleRandomButtonClick}>
+    <Button
+      sx={{ flex: 1, mt: 2 }}
+      loading={busy}
+      onClick={handleRandomButtonClick}
+    >
       Random
     </Button>
   );

@@ -36,7 +36,7 @@ export function PerlinScale(props: {
 
   return (
     <>
-      <FormControl orientation={"horizontal"}>
+      <FormControl orientation={"horizontal"} sx={{ mr: 1.6 }}>
         <FormLabel>X</FormLabel>
         <Slider
           value={props.value.x}
@@ -49,7 +49,7 @@ export function PerlinScale(props: {
         />
       </FormControl>
 
-      <FormControl orientation={"horizontal"}>
+      <FormControl orientation={"horizontal"} sx={{ mr: 1.6 }}>
         <FormLabel>Y</FormLabel>
         <Slider
           value={props.value.y}

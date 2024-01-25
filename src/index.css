@@ -20,7 +20,7 @@ body {
   justify-content: center;
 }
 
-.settings {
+.side-panel {
   position: absolute;
   top: var(--padding);
   right: var(--padding);
@@ -34,7 +34,20 @@ body {
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+
+  max-height: calc(100vh - 60px);
+}
+
+.settings {
+  display: flex;
+  gap: var(--padding);
+
+  flex-direction: column;
+  flex: 1;
+  overflow: visible;
+  overflow-y: auto;
+  margin-top: var(--padding);
+  padding-bottom: var(--padding);
 }
 
 .game {
@@ -85,10 +98,9 @@ body {
   background-size: contain;
   width: 150px;
   height: 150px;
+  flex-shrink: 0;
   margin: -20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  align-self: center;
   transition: all 0.5s linear;
 }
 .mini-map[data-busy] {

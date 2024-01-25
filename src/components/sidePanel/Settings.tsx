@@ -49,98 +49,95 @@ export function Settings() {
   }, []);
 
   return (
-    <Box
-      sx={{
-        display: "grid",
-        gap: 2,
-        alignItems: "center",
-        flexWrap: "wrap",
-      }}
-    >
-      <FormControl>
-        <FormLabel>Seed</FormLabel>
-        <Seed
-          key={seed}
-          value={seed}
-          onChange={(seed) =>
-            handleChange({
-              seed,
-              gridSize,
-              perlinScale,
-              perlinElevation,
-              blockSize,
-            })
-          }
-        />
-      </FormControl>
+    <>
+      <Box className={"settings"}>
+        <FormControl>
+          <FormLabel>Seed</FormLabel>
+          <Seed
+            key={seed}
+            value={seed}
+            onChange={(seed) =>
+              handleChange({
+                seed,
+                gridSize,
+                perlinScale,
+                perlinElevation,
+                blockSize,
+              })
+            }
+          />
+        </FormControl>
 
-      <FormControl>
-        <FormLabel>City size</FormLabel>
-        <GridSize
-          key={gridSize.width}
-          value={gridSize}
-          onChange={(gridSize) =>
-            handleChange({
-              seed,
-              gridSize,
-              perlinScale,
-              perlinElevation,
-              blockSize,
-            })
-          }
-        />
-      </FormControl>
+        <FormControl>
+          <FormLabel>City size</FormLabel>
+          <GridSize
+            key={gridSize.width}
+            value={gridSize}
+            onChange={(gridSize) =>
+              handleChange({
+                seed,
+                gridSize,
+                perlinScale,
+                perlinElevation,
+                blockSize,
+              })
+            }
+          />
+        </FormControl>
 
-      <FormControl>
-        <FormLabel>Perlin scale</FormLabel>
-        <PerlinScale
-          value={perlinScale}
-          onChange={(perlinScale) =>
-            handleChange({
-              seed,
-              gridSize,
-              perlinScale,
-              perlinElevation,
-              blockSize,
-            })
-          }
-        />
-      </FormControl>
+        <FormControl>
+          <FormLabel>Perlin scale</FormLabel>
+          <PerlinScale
+            value={perlinScale}
+            onChange={(perlinScale) =>
+              handleChange({
+                seed,
+                gridSize,
+                perlinScale,
+                perlinElevation,
+                blockSize,
+              })
+            }
+          />
+        </FormControl>
 
-      <FormControl>
-        <FormLabel>Perlin elevation</FormLabel>
+        <FormControl>
+          <FormLabel>Perlin elevation</FormLabel>
 
-        <PerlinElevation
-          value={perlinElevation}
-          onChange={(perlinElevation) =>
-            handleChange({
-              seed,
-              gridSize,
-              perlinScale,
-              perlinElevation,
-              blockSize,
-            })
-          }
-        />
-      </FormControl>
+          <PerlinElevation
+            value={perlinElevation}
+            onChange={(perlinElevation) =>
+              handleChange({
+                seed,
+                gridSize,
+                perlinScale,
+                perlinElevation,
+                blockSize,
+              })
+            }
+          />
+        </FormControl>
 
-      <FormControl>
-        <FormLabel>Block size</FormLabel>
-        <BlockSize
-          value={blockSize}
-          onChange={(blockSize) =>
-            handleChange({
-              seed,
-              gridSize,
-              perlinScale,
-              perlinElevation,
-              blockSize,
-            })
-          }
-        />
-      </FormControl>
+        <FormControl>
+          <FormLabel>Block size</FormLabel>
+          <BlockSize
+            value={blockSize}
+            onChange={(blockSize) =>
+              handleChange({
+                seed,
+                gridSize,
+                perlinScale,
+                perlinElevation,
+                blockSize,
+              })
+            }
+          />
+        </FormControl>
+      </Box>
 
-      <RandomButton onClick={(args) => handleChange(args)} />
-    </Box>
+      <Box sx={{ display: "flex" }}>
+        <RandomButton onClick={(args) => handleChange(args)} />
+      </Box>
+    </>
   );
 }

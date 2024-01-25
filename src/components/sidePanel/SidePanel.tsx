@@ -3,7 +3,7 @@ import { MiniMap } from "./MiniMap";
 
 export function SidePanel() {
   return (
-    <div className={"settings"}>
+    <div className={"side-panel"}>
       <MiniMap />
       <Settings />
     </div>
