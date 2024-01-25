@@ -5,6 +5,7 @@ import eslint from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/random-city",
   assetsInclude: ["**/*.png"],
   plugins: [
     eslint({
